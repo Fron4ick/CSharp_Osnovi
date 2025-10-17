@@ -1,0 +1,6 @@
+C:\Users\f_roz\OneDrive\Documents\CSharp_Osnovi\Mazes\obj\Debug\net6.0\Mazes.csproj.AssemblyReference.cache
+C:\Users\f_roz\OneDrive\Documents\CSharp_Osnovi\Mazes\obj\Debug\net6.0\Mazes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\f_roz\OneDrive\Documents\CSharp_Osnovi\Mazes\obj\Debug\net6.0\Mazes.AssemblyInfoInputs.cache
+C:\Users\f_roz\OneDrive\Documents\CSharp_Osnovi\Mazes\obj\Debug\net6.0\Mazes.AssemblyInfo.cs
+C:\Users\f_roz\OneDrive\Documents\CSharp_Osnovi\Mazes\obj\Debug\net6.0\Mazes.csproj.CoreCompileInputs.cache
+C:\Users\f_roz\OneDrive\Documents\CSharp_Osnovi\Mazes\obj\Debug\net6.0\Mazes.sourcelink.json
