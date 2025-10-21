@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "1kABN4s46bE=",
   "success": true,
   "projectFilePath": "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi\\Mazes\\Mazes.csproj",
+=======
+  "dgSpecHash": "E3wyFAvylf0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi_\\Mazes\\Mazes.csproj",
+>>>>>>> Stashed changes
   "expectedPackageFiles": [
     "C:\\Users\\f_roz\\.nuget\\packages\\avalonia\\0.10.13\\avalonia.0.10.13.nupkg.sha512",
     "C:\\Users\\f_roz\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.0.2020091801\\avalonia.angle.windows.natives.2.1.0.2020091801.nupkg.sha512",
