@@ -1,40 +1,33 @@
-<<<<<<< Updated upstream
-﻿namespace Mazes;
-=======
 ﻿using System;
 
 namespace Mazes;
->>>>>>> Stashed changes
 
 public static class DiagonalMazeTask
 {
     public static void MoveOut(Robot robot, int width, int height)
     {
-<<<<<<< Updated upstream
+        var isVerticalPrimary = height >= width;
+        var primaryDirection = isVerticalPrimary ? Direction.Down : Direction.Right;
+        var secondaryDirection = isVerticalPrimary ? Direction.Right : Direction.Down;
         
-    }
-}
-=======
-        int minSide = Math.Min(width, height);
-        string directionMove = height >= width ? "vertical" : "horizontal";
-        var longStep = Math.Max(height, width) / (minSide - 1);
-        MoveCycle(robot, minSide, longStep, directionMove);
+        var longStep = Math.Max(height, width) / (Math.Min(width, height) - 1);
+        
+        MoveInDiagonalPattern(robot, longStep, primaryDirection, secondaryDirection);
     }
 
-    public static void MoveCycle(Robot robot, int minSide, int longStep, string dirStep)
+    private static void MoveInDiagonalPattern(Robot robot, int longStep, 
+        Direction primary, Direction secondary)
     {
         while (!robot.Finished)
         {
-            for (int j = 0; j < longStep; j++)
-            {
-                robot.MoveTo(dirStep == "vertical" ? Direction.Down : Direction.Right);
-            }
-
-            if (!robot.Finished)
-            {
-                robot.MoveTo(dirStep == "vertical" ? Direction.Right : Direction.Down);
-            }
+            MoveMultipleSteps(robot, longStep, primary);
+            if (!robot.Finished) robot.MoveTo(secondary);
         }
     }
+
+    private static void MoveMultipleSteps(Robot robot, int steps, Direction direction)
+    {
+        for (int step = 0; step < steps && !robot.Finished; step++)
+            robot.MoveTo(direction);
+    }
 }
->>>>>>> Stashed changes

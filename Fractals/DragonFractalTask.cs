@@ -5,44 +5,45 @@ namespace Fractals;
 
 internal static class DragonFractalTask
 {
-    public static void DrawDragonFractal(Pixels pixels, int iterationsCount, int seed)
-    {
-        var random = new Random(seed);
-        double x = 1, y = 0;
+	public static void DrawDragonFractal(Pixels pixels, int iterationsCount, int seed)
+	{
+		var random = new Random(seed);
+		double x = 1;
+		double y = 0;
 
-        pixels.SetPixel(x, y);
-        GenFracPoint(pixels, random, iterationsCount, ref x, ref y);
-    }
-    
-    private static void GenFracPoint(Pixels pixels, Random random, int iterationsCount, ref double x, ref double y)
-    {
-        for (int i = 0; i < iterationsCount; i++)
+		pixels.SetPixel(x, y);
+		GeneratePoints(pixels, random, iterationsCount, x, y);
+	}
+
+	public static void GeneratePoints(Pixels pixels, Random random, int iterationsCount, double startX, double startY)
+	{
+		double x = startX;
+		double y = startY;
+
+		for (int i = 0; i < iterationsCount; i++)
+		{
+			var transformType = random.Next(2);
+			var newPoint = Transform(x, y, transformType);
+			
+			x = newPoint.Item1;
+			y = newPoint.Item2;
+			pixels.SetPixel(x, y);
+		}
+	}
+
+	public static Tuple<double, double> Transform(double x, double y, int transformType)
+	{
+        if (transformType == 0)
         {
-            TransformPoint(random, ref x, ref y);
-            pixels.SetPixel(x, y);
+            double newX = (x - y) / 2.0;
+            double newY = (x + y) / 2.0;
+            return Tuple.Create(newX, newY);
         }
-    }
-
-    private static void TransformPoint(Random random, ref double x, ref double y)
-    {
-        double newX, newY;
-        
-        if (random.Next(2) == 0) ApplyFirstTransformation(x, y, out newX, out newY);
-        else ApplySecondTransformation(x, y, out newX, out newY);
-
-        x = newX;
-        y = newY;
-    }
-
-    private static void ApplyFirstTransformation(double x, double y, out double newX, out double newY)
-    {
-        newX = (x - y) / 2.0;
-        newY = (x + y) / 2.0;
-    }
-
-    private static void ApplySecondTransformation(double x, double y, out double newX, out double newY)
-    {
-        newX = (-x - y) / 2.0 + 1;
-        newY = (x - y) / 2.0;
-    }
+        else
+        {
+            double newX = (-x - y) / 2.0 + 1;
+            double newY = (x - y) / 2.0;
+            return Tuple.Create(newX, newY);
+        }
+	}
 }

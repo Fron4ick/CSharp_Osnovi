@@ -14,25 +14,14 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Mazes
-<<<<<<< Updated upstream
-build_property.ProjectDir = C:\Users\f_roz\OneDrive\Documents\CSharp_Osnovi\Mazes\
-=======
-build_property.ProjectDir = C:\Users\f_roz\OneDrive\Documents\CSharp_Osnovi_\Mazes\
->>>>>>> Stashed changes
+build_property.ProjectDir = C:\Users\f_roz\OneDrive\Documents\CSharp_Osnovi\Mazes_clean\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 6.0
 build_property.EnableCodeStyleSeverity = 
 
-<<<<<<< Updated upstream
-[C:/Users/f_roz/OneDrive/Documents/CSharp_Osnovi/Mazes/UI/App.axaml]
+[C:/Users/f_roz/OneDrive/Documents/CSharp_Osnovi/Mazes_clean/UI/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/f_roz/OneDrive/Documents/CSharp_Osnovi/Mazes/UI/MainWindow.axaml]
-=======
-[C:/Users/f_roz/OneDrive/Documents/CSharp_Osnovi_/Mazes/UI/App.axaml]
-build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
-
-[C:/Users/f_roz/OneDrive/Documents/CSharp_Osnovi_/Mazes/UI/MainWindow.axaml]
->>>>>>> Stashed changes
+[C:/Users/f_roz/OneDrive/Documents/CSharp_Osnovi/Mazes_clean/UI/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

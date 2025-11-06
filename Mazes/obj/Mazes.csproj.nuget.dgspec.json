@@ -1,31 +1,17 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< Updated upstream
-    "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi\\Mazes\\Mazes.csproj": {}
+    "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi\\Mazes_clean\\Mazes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi\\Mazes\\Mazes.csproj": {
+    "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi\\Mazes_clean\\Mazes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi\\Mazes\\Mazes.csproj",
+        "projectUniqueName": "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi\\Mazes_clean\\Mazes.csproj",
         "projectName": "Mazes",
-        "projectPath": "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi\\Mazes\\Mazes.csproj",
+        "projectPath": "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi\\Mazes_clean\\Mazes.csproj",
         "packagesPath": "C:\\Users\\f_roz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi\\Mazes\\obj\\",
-=======
-    "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi_\\Mazes\\Mazes.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi_\\Mazes\\Mazes.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi_\\Mazes\\Mazes.csproj",
-        "projectName": "Mazes",
-        "projectPath": "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi_\\Mazes\\Mazes.csproj",
-        "packagesPath": "C:\\Users\\f_roz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi_\\Mazes\\obj\\",
->>>>>>> Stashed changes
+        "outputPath": "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi\\Mazes_clean\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\f_roz\\AppData\\Roaming\\NuGet\\NuGet.Config"
