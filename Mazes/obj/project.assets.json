@@ -4584,11 +4584,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi\\Mazes_clean\\Mazes.csproj",
+      "projectUniqueName": "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi\\Mazes\\Mazes.csproj",
       "projectName": "Mazes",
-      "projectPath": "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi\\Mazes_clean\\Mazes.csproj",
+      "projectPath": "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi\\Mazes\\Mazes.csproj",
       "packagesPath": "C:\\Users\\f_roz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi\\Mazes_clean\\obj\\",
+      "outputPath": "C:\\Users\\f_roz\\OneDrive\\Documents\\CSharp_Osnovi\\Mazes\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\f_roz\\AppData\\Roaming\\NuGet\\NuGet.Config"
