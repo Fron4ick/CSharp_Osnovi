@@ -1,4 +1,6 @@
-﻿namespace Recognizer;
+using System.Collections.Generic;
+
+namespace Recognizer;
 
 internal static class MedianFilterTask
 {
@@ -13,6 +15,64 @@ internal static class MedianFilterTask
 	 */
 	public static double[,] MedianFilter(double[,] original)
 	{
-		return original;
+		var width = original.GetLength(0);
+		var height = original.GetLength(1);
+		var filtered = new double[width, height];
+		
+		for (var x = 0; x < width; x++)
+		{
+			for (var y = 0; y < height; y++)
+			{
+				filtered[x, y] = GetFilteredPixelValue(original, x, y, width, height);
+			}
+		}
+		
+		return filtered;
+	}
+	
+	private static double GetFilteredPixelValue(double[,] original, int x, int y, int width, int height)
+	{
+		var neighbors = GetNeighborValues(original, x, y, width, height);
+		neighbors.Sort();
+		return GetMedian(neighbors);
+	}
+	
+	private static List<double> GetNeighborValues(double[,] original, int x, int y, int width, int height)
+	{
+		var neighbors = new List<double>();
+		
+		for (var dx = -1; dx <= 1; dx++)
+		{
+			for (var dy = -1; dy <= 1; dy++)
+			{
+				var nx = x + dx;
+				var ny = y + dy;
+				
+				if (IsValidCoordinate(nx, ny, width, height))
+				{
+					neighbors.Add(original[nx, ny]);
+				}
+			}
+		}
+		
+		return neighbors;
+	}
+	
+	private static bool IsValidCoordinate(int x, int y, int width, int height)
+	{
+		return x >= 0 && x < width && y >= 0 && y < height;
+	}
+	
+	private static double GetMedian(List<double> values)
+	{
+		var count = values.Count;
+		if (count % 2 == 1)
+		{
+			return values[count / 2];
+		}
+		else
+		{
+			return (values[count / 2 - 1] + values[count / 2]) / 2.0;
+		}
 	}
 }
