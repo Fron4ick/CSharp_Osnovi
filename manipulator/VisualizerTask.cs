@@ -22,31 +22,43 @@ public static class VisualizerTask
 
 	public static void KeyDown(Visual visual, KeyEventArgs key)
 	{
-		// TODO: Добавьте реакцию на QAWS и пересчитывать Wrist
-
-		visual.InvalidateVisual(); // вызывает перерисовку канваса
+		if (key.Key == Key.Q) Shoulder += Alpha;
+		else if (key.Key == Key.A) Shoulder -= Alpha;
+		else if (key.Key == Key.W) Elbow += Alpha;
+		else if (key.Key == Key.S) Elbow -= Alpha;
+		
+		Wrist = -Alpha - Shoulder - Elbow;
+		visual.InvalidateVisual();
 	}
 
 	public static void MouseMove(Visual visual, PointerEventArgs e)
 	{
-		// TODO: Измените X и Y пересчитав координаты (e.X, e.Y) в логические.
-
+		Point shoulderPosition = GetShoulderPos(visual);
+		Point logicalCoordinates = ConvertWindowToMath(e.GetPosition(visual), shoulderPosition);
+		X = logicalCoordinates.X;
+		Y = logicalCoordinates.Y;
+		
 		UpdateManipulator();
 		visual.InvalidateVisual();
 	}
 
 	public static void MouseWheel(Visual visual, PointerWheelEventArgs e)
 	{
-		// TODO: Измените Alpha, используя e.Delta.Y — размер прокрутки колеса мыши
-
+		Alpha += e.Delta.Y;
+		
 		UpdateManipulator();
 		visual.InvalidateVisual();
 	}
 
 	public static void UpdateManipulator()
 	{
-		// Вызовите ManipulatorTask.MoveManipulatorTo и обновите значения полей Shoulder, Elbow и Wrist, 
-		// если они не NaN. Это понадобится для последней задачи.
+		double[] calculatedAngles = ManipulatorTask.MoveManipulatorTo(X, Y, Alpha);
+		if (calculatedAngles[0] != double.NaN)
+		{
+			Shoulder = calculatedAngles[0];
+			Elbow = calculatedAngles[1];
+			Wrist = calculatedAngles[2];
+		}
 	}
 
 	public static void DrawManipulator(DrawingContext context, Point shoulderPos)
@@ -68,9 +80,16 @@ public static class VisualizerTask
 		};
 		context.DrawText(formattedText, new Point(10, 10));
 
-		// Нарисуйте сегменты манипулятора методом ccontext.DrawLine(ManipulatorPen, ...)
-		// Нарисуйте суставы манипулятора окружностями методом context.DrawEllipse(JointBrush, null, ...)
-		// Не забудьте сконвертировать координаты из логических в оконные
+		Point[] convertedJoints = new Point[3];
+		for (int i = 0; i < 3; i++)
+			convertedJoints[i] = ConvertMathToWindow(joints[i], shoulderPos);
+
+		for (int i = 0; i < 2; i++)
+			context.DrawLine(ManipulatorPen, convertedJoints[i], convertedJoints[i + 1]);
+		context.DrawLine(ManipulatorPen, shoulderPos, convertedJoints[0]);
+
+		for (int i = 0; i < 3; i++)
+			context.DrawEllipse(JointBrush, null, convertedJoints[i], 4, 4);
 	}
 
 	private static void DrawReachableZone(
@@ -96,7 +115,7 @@ public static class VisualizerTask
 
 	public static Point GetShoulderPos(Visual visual)
 	{
-		return new Point(visual.Bounds.Width / 2, visual.Bounds.Height / 2);
+		return new Point(visual.Bounds.Width / 2.0, visual.Bounds.Height / 2.0);
 	}
 
 	public static Point ConvertMathToWindow(Point mathPoint, Point shoulderPos)

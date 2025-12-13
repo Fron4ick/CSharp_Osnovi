@@ -5,12 +5,14 @@ namespace Manipulation;
 
 public class TriangleTask
 {
-    /// <summary>
-    /// Возвращает угол (в радианах) между сторонами a и b в треугольнике со сторонами a, b, c 
-    /// </summary>
-    public static double GetABAngle(double a, double b, double c)
+    public static double GetABAngle(double sideOne, double sideTwo, double opposite)
     {
-        return 0.0;
+        if (sideOne <= 0 || sideTwo <= 0 || opposite < 0)
+            return double.NaN;
+        
+        return (opposite != 0) 
+            ? Math.Acos((sideOne * sideOne + sideTwo * sideTwo - opposite * opposite) / (2 * sideOne * sideTwo))
+            : 0;
     }
 }
 
@@ -19,9 +21,11 @@ public class TriangleTask_Tests
 {
     [TestCase(3, 4, 5, Math.PI / 2)]
     [TestCase(1, 1, 1, Math.PI / 3)]
-    // добавьте ещё тестовых случаев!
-    public void TestGetABAngle(double a, double b, double c, double expectedAngle)
+    [TestCase(5, 5, 5, Math.PI / 3)]
+    [TestCase(1, 1, 0, 0)]
+    public void TestGetABAngle(double sideOne, double sideTwo, double opposite, double expectedAngle)
     {
-        Assert.Fail("Not implemented yet");
+        var actualAngle = TriangleTask.GetABAngle(sideOne, sideTwo, opposite);
+        Assert.That(actualAngle, Is.EqualTo(expectedAngle).Within(1e-10));
     }
 }
