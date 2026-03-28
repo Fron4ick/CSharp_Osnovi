@@ -12,12 +12,12 @@ internal static class HistogramTask
         }
 
         var days = new string[31];
-        for (var x = 0; x < days.Length; i++)
-            days[i] = (x + 1).ToString();
+        for (var x = 0; x < days.Length; x++)
+            days[x] = (x + 1).ToString();
 
         var month = new string[12];
-        for (var y = 0; y < days.Length; i++)
-            days[i] = (y + 1).ToString();
+        for (var y = 0; y < days.Length; y++)
+            days[y] = (y + 1).ToString();
         
         return new HistogramData(
             $"Рождаемость людей с именем '{name}'",

@@ -65,7 +65,7 @@ public static class VisualizerTask
 	{
 		var joints = AnglesToCoordinatesTask.GetJointPositions(Shoulder, Elbow, Wrist);
 
-		DrawReachableZone(context, ReachableAreaBrush, UnreachableAreaBrush, shoulderPos, joints);
+		//DrawReachableZone(context, ReachableAreaBrush, UnreachableAreaBrush, shoulderPos, joints);
 
 		var formattedText = new FormattedText(
 			$"X={X:0}, Y={Y:0}, Alpha={Alpha:0.00}",
@@ -81,11 +81,11 @@ public static class VisualizerTask
 		context.DrawText(formattedText, new Point(10, 10));
 
 		Point[] convertedJoints = new Point[3];
-		for (int i = 0; i < 3; i++)
-			convertedJoints[i] = ConvertMathToWindow(joints[i], shoulderPos);
+		//for (int i = 0; i < 3; i++)
+			//convertedJoints[i] = ConvertMathToWindow(joints[i], shoulderPos);
 
-		for (int i = 0; i < 2; i++)
-			context.DrawLine(ManipulatorPen, convertedJoints[i], convertedJoints[i + 1]);
+		//for (int i = 0; i < 2; i++)
+			//context.DrawLine(ManipulatorPen, convertedJoints[i], convertedJoints[i + 1]);
 		context.DrawLine(ManipulatorPen, shoulderPos, convertedJoints[0]);
 
 		for (int i = 0; i < 3; i++)

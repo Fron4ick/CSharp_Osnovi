@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>MagneticMaze</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- MonoGame DesktopGL -->
+    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.1.303" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Content project (mgcb) will be referenced here; file can be edited with MGCB Editor -->
+    <MonoGameContentReference Include="Content/Content.mgcb" />
+  </ItemGroup>
+
+</Project>
+

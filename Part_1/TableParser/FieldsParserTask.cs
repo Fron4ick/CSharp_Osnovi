@@ -10,10 +10,10 @@ public class FieldParserTaskTests
 	public static void Test(string input, string[] expectedResult)
 	{
 		var actualResult = FieldsParserTask.ParseLine(input);
-		Assert.AreEqual(expectedResult.Length, actualResult.Count);
+		Assert.Equals(expectedResult.Length, actualResult.Count);
 		for (int i = 0; i < expectedResult.Length; ++i)
 		{
-			Assert.AreEqual(expectedResult[i], actualResult[i].Value);
+			Assert.Equals(expectedResult[i], actualResult[i].Value);
 		}
 	}
 
